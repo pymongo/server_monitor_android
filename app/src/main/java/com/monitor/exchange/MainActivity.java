@@ -51,19 +51,16 @@ public class MainActivity extends AppCompatActivity {
         public void onResponse(JSONObject response) {
           try {
             JSONArray jsonArray = response.getJSONArray("all_currencies");
-            Log.e(TAG, jsonArray.toString());
+            Log.e(TAG, response.toString(2));
             for (int i = 0; i < jsonArray.length(); i++) {
               JSONObject currencyHash = jsonArray.getJSONObject(i);
               HashMap<String, String> map = new HashMap<>();
               map.put("id", currencyHash.getString("id"));
               map.put("code", currencyHash.getString("code"));
               map.put("iconUrl", currencyHash.getString("icon"));
-              Log.e(TAG, map.toString());
               currencies.add(map);
-              Log.e(TAG, currencies.toString());
             }
             listView = findViewById(R.id.listView);
-            Log.e(TAG, currencies.toString());
             CurrencyAdapter currencyAdapter = new CurrencyAdapter(getApplicationContext(), currencies);
             listView.setAdapter(currencyAdapter);
           } catch (JSONException e) {
