@@ -12,3 +12,12 @@
 - [ ] 添加tabbar底部导航栏(Fragment)
 - [ ] 通过底部导航栏切换生产服务器和测试服务器的当前状态
 - [ ] 使用websocket替代HTTP的接口
+
+## 下载链接与历史版本
+
+### 版本号：20200104
+
+[20200104版下载链接](http://showmethemoney.hnengdata.com/image_after_2019_06/1974/com.monitor.exchange_20200104)
+Git版本：[82d14f97](https://github.com/cadae-exchange/android-server-monitor/commit/82d14f975f5a00eec95bceb9fb83379af983b691)
+
+功能介绍(changelog)：币种列表页面，显示所有可见的币种的信息
