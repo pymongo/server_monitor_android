@@ -41,18 +41,19 @@ public class CurrencyAdapter extends BaseAdapter {
 
   @Override
   public View getView(int index, View convertView, ViewGroup parent) {
-    // TODO 解决inflater.inflate的参数警告
-    View listItem = inflater.inflate(R.layout.currency_row, null);
+    if (convertView == null) {
+      convertView = inflater.inflate(R.layout.currency_row, parent, false);
+    }
 
-    ImageView currencyIcon = listItem.findViewById(R.id.currencyIcon);
-    TextView currencyCode = listItem.findViewById(R.id.currnecyCode);
-    TextView currencyID = listItem.findViewById(R.id.currnecyID);
+    ImageView currencyIcon = convertView.findViewById(R.id.currencyIcon);
+    TextView currencyCode = convertView.findViewById(R.id.currnecyCode);
+    TextView currencyID = convertView.findViewById(R.id.currnecyID);
     Map<String, String> currency = currencies.get(index);
 
     // TODO 使用glide库下载币种图片
     currencyCode.setText(currency.get("code"));
     currencyID.setText(currency.get("id"));
 
-    return listItem;
+    return convertView;
   }
 }
