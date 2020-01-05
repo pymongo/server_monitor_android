@@ -13,6 +13,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+import com.monitor.exchange.adapter.CurrencyAdapter;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -26,14 +27,13 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
 
   final static String TAG = "monitorLog";
-  final static String API_URL = "http://v-api.testcadae.top/mobile_api/v2/home/initialize";
 
   RequestQueue requestQueue;
   // can't do nested upcasting ArrayList<HashMap> to List<Map>
   List<HashMap<String, String>> currencies;
   ListView listView;
 
-  public void sendToast(CharSequence Message) {
+  public void sendToast(String Message) {
     Toast.makeText(this, Message, Toast.LENGTH_SHORT).show();
   }
 
@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
     requestQueue = Volley.newRequestQueue(this);
     // [codeRiver]: 就算一行很长，方法的第一个参数也要写在第一行
     JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET,
-      API_URL, null, new Response.Listener<JSONObject>() {
+      Constant.HOME_API, null, new Response.Listener<JSONObject>() {
 
       @Override
       public void onResponse(JSONObject response) {
