@@ -1,8 +1,6 @@
 package com.monitor.exchange;
 
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,8 +8,6 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import java.io.InputStream;
-import java.net.URL;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -53,19 +49,7 @@ public class CurrencyAdapter extends BaseAdapter {
     TextView currencyID = listItem.findViewById(R.id.currnecyID);
     Map<String, String> currency = currencies.get(index);
 
-    // 将奇数列的图标改为monitor
-    if (index % 2 == 0) {
-      currencyIcon.setImageResource(R.mipmap.monitor_icon);
-    }
-
-    try {
-      InputStream inputStream = new URL(currency.get("iconUrl")).openStream();
-      Bitmap bitmap = BitmapFactory.decodeStream(inputStream);
-      currencyIcon.setImageBitmap(bitmap);
-    } catch (Exception e) {
-      e.printStackTrace();
-    }
-
+    // TODO 使用glide库下载币种图片
     currencyCode.setText(currency.get("code"));
     currencyID.setText(currency.get("id"));
 
