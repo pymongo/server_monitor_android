@@ -18,7 +18,6 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.monitor.exchange.adapter.CurrencyAdapter;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -48,9 +47,10 @@ public class MainActivity extends AppCompatActivity {
     setContentView(R.layout.activity_main);
 
     BottomNavigationView bottomNavigation = findViewById(R.id.bottom_navigation_menu);
+    // menu.xml中的id必须与navigation_graph.xml中的ID保持一致
     AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(R.id.navigation_home,
       R.id.navigation_monitor, R.id.navigation_currencies, R.id.navigation_mine).build();
-    NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
+    NavController navController = Navigation.findNavController(this, R.id.navigation_host_fragment);
     NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
     NavigationUI.setupWithNavController(bottomNavigation, navController);
   }
