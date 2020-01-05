@@ -35,18 +35,15 @@ import java.util.Objects;
 
 public class CurrenciesFragment extends Fragment {
 
-  private RequestQueue requestQueue;
   private List<HashMap<String, String>> currencies;
   private CurrencyAdapter adapter;
-
 
   @Nullable
   @Override
   public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
     // return super.onCreateView(inflater, container, savedInstanceState);
-    return inflater.inflate(R.layout.fragment_currencies, container, false);
+    return inflater.inflate(R.layout.fragment_list_view, container, false);
   }
-
 
   @Override
   public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
@@ -58,7 +55,8 @@ public class CurrenciesFragment extends Fragment {
     adapter = new CurrencyAdapter(context, currencies);
     ListView listView = Objects.requireNonNull(getView()).findViewById(R.id.list_view);
     listView.setAdapter(adapter);
-    requestQueue = Volley.newRequestQueue(context);
+
+    RequestQueue requestQueue = Volley.newRequestQueue(context);
     JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET,
       Constant.HOME_API, null, new Response.Listener<JSONObject>() {
 
@@ -66,7 +64,7 @@ public class CurrenciesFragment extends Fragment {
       public void onResponse(JSONObject response) {
         try {
           JSONArray jsonArray = response.getJSONArray("all_currencies");
-          Log.i(Constant.LOG_TAG, response.toString(2));
+          Log.i(Constant.LOG_TAG, jsonArray.toString(2));
           for (int i = 0; i < jsonArray.length(); i++) {
             JSONObject currencyHash = jsonArray.getJSONObject(i);
             HashMap<String, String> map = new HashMap<>();

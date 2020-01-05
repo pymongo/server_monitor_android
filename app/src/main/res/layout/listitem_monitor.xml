@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?><!-- 布局参考：法币交易-订单详情页面(show_trading) -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  android:orientation="horizontal"
+  android:padding="16dp">
+
+  <TextView
+    android:id="@+id/item_key"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/empty"
+    android:textSize="20sp"
+    android:textStyle="bold" />
+
+  <!-- layout_weight=1让容器占据剩余宽度 -->
+  <!-- 类似css的flex-grow: 1 -->
+  <View
+    android:layout_width="0dp"
+    android:layout_height="1px"
+    android:layout_weight="1" />
+
+  <TextView
+    android:id="@+id/item_value"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/empty"
+    android:textSize="20sp"
+    android:textStyle="bold" />
+
+</LinearLayout>

@@ -6,4 +6,8 @@ public interface Constant {
   String HOME_API = API_URL + "home/initialize";
 
   String LOG_TAG = "myLog";
+
+  // 网络请求相关常量
+  int CONNECTION_TIMEOUT = 5;
+  int IO_TIMEOUT = 10;
 }

@@ -1,5 +1,6 @@
 <resources>
   <string name="app_name">服务器监控</string>
+  <string name="empty">null</string>
   <string name="title_home">首页</string>
   <string name="title_monitor">服务器监控</string>
   <string name="title_currencies">币种列表</string>
