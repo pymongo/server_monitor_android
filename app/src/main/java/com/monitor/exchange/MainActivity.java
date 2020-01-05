@@ -1,6 +1,10 @@
 package com.monitor.exchange;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
+import androidx.navigation.ui.AppBarConfiguration;
+import androidx.navigation.ui.NavigationUI;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -13,6 +17,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.monitor.exchange.adapter.CurrencyAdapter;
 
 import org.json.JSONArray;
@@ -42,6 +47,15 @@ public class MainActivity extends AppCompatActivity {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
 
+    BottomNavigationView bottomNavigation = findViewById(R.id.bottom_navigation_menu);
+    AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(R.id.navigation_home,
+      R.id.navigation_monitor, R.id.navigation_currencies, R.id.navigation_mine).build();
+    NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
+    NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
+    NavigationUI.setupWithNavController(bottomNavigation, navController);
+  }
+
+  void temp() {
     currencies = new ArrayList<>();
     requestQueue = Volley.newRequestQueue(this);
     // [codeRiver]: 就算一行很长，方法的第一个参数也要写在第一行
@@ -62,8 +76,8 @@ public class MainActivity extends AppCompatActivity {
             map.put("iconUrl", currencyHash.getString("icon"));
             currencies.add(map);
           }
-          listView = findViewById(R.id.listView);
-          listView.setAdapter(new CurrencyAdapter(getApplicationContext(), currencies));
+//          listView = findViewById(R.id.listView);
+//          listView.setAdapter(new CurrencyAdapter(getApplicationContext(), currencies));
         } catch (JSONException e) {
           e.printStackTrace();
           requestQueue.stop();
@@ -78,4 +92,5 @@ public class MainActivity extends AppCompatActivity {
     });
     requestQueue.add(jsonObjectRequest);
   }
+
 }
