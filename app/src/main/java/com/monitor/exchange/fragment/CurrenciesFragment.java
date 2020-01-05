@@ -42,7 +42,7 @@ public class CurrenciesFragment extends Fragment {
   @Override
   public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
     // return super.onCreateView(inflater, container, savedInstanceState);
-    return inflater.inflate(R.layout.fragment_list_view, container, false);
+    return inflater.inflate(R.layout.items_container, container, false);
   }
 
   @Override
@@ -71,9 +71,8 @@ public class CurrenciesFragment extends Fragment {
             map.put("id", currencyHash.getString("id"));
             map.put("code", currencyHash.getString("code"));
             map.put("icon", currencyHash.getString("icon"));
-            currencies.add(map);
+            adapter.appendCurrency(map);
           }
-          adapter.updateData(currencies);
         } catch (JSONException e) {
           e.printStackTrace();
         }

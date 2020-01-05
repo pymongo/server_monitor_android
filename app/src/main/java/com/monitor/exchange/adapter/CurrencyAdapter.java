@@ -42,7 +42,12 @@ public class CurrencyAdapter extends BaseAdapter {
     return index;
   }
 
-  public void updateData(List<HashMap<String, String>> currencies) {
+  public void appendCurrency(HashMap<String, String> currency) {
+    this.currencies.add(currency);
+    notifyDataSetChanged();
+  }
+
+  public void updateCurrencies(List<HashMap<String, String>> currencies) {
     this.currencies = currencies;
     notifyDataSetChanged();
   }
@@ -50,7 +55,7 @@ public class CurrencyAdapter extends BaseAdapter {
   @Override
   public View getView(int index, View convertView, ViewGroup parent) {
     if (convertView == null) {
-      convertView = inflater.inflate(R.layout.listitem_currency, parent, false);
+      convertView = inflater.inflate(R.layout.item_currency, parent, false);
     }
 
     ImageView currencyIcon = convertView.findViewById(R.id.currency_icon);

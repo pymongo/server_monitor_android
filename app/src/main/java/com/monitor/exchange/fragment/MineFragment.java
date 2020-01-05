@@ -14,13 +14,11 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.monitor.exchange.Constant;
-import com.monitor.exchange.MainActivity;
 import com.monitor.exchange.R;
 import com.monitor.exchange.adapter.CurrencyAdapter;
 
 import org.jetbrains.annotations.NotNull;
 import org.json.JSONArray;
-import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
@@ -93,7 +91,7 @@ public class MineFragment extends Fragment {
             activity.runOnUiThread(new Runnable() {
               @Override
               public void run() {
-                adapter.updateData(currencies);
+                adapter.updateCurrencies(currencies);
               }
             });
           } catch (Exception e) {

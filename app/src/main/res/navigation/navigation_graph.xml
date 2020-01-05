@@ -9,20 +9,20 @@
     android:id="@+id/navigation_home"
     android:name="com.monitor.exchange.fragment.HomeFragment"
     android:label="fragment_list_view"
-    tools:layout="@layout/fragment_list_view" />
+    tools:layout="@layout/items_container" />
   <fragment
     android:id="@+id/navigation_monitor"
     android:name="com.monitor.exchange.fragment.MonitorFragment"
     android:label="fragment_list_view"
-    tools:layout="@layout/fragment_list_view" />
+    tools:layout="@layout/items_container" />
   <fragment
     android:id="@+id/navigation_currencies"
     android:name="com.monitor.exchange.fragment.CurrenciesFragment"
     android:label="fragment_list_view"
-    tools:layout="@layout/fragment_list_view" />
+    tools:layout="@layout/items_container" />
   <fragment
     android:id="@+id/navigation_mine"
     android:name="com.monitor.exchange.fragment.MineFragment"
     android:label="fragment_list_view"
-    tools:layout="@layout/fragment_list_view" />
+    tools:layout="@layout/items_container" />
 </navigation>
