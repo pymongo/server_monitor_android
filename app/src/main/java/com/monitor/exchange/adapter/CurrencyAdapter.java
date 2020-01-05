@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.monitor.exchange.R;
+import com.squareup.picasso.Picasso;
 
 import java.util.HashMap;
 import java.util.List;
@@ -52,12 +53,15 @@ public class CurrencyAdapter extends BaseAdapter {
       convertView = inflater.inflate(R.layout.listitem_currency, parent, false);
     }
 
-    ImageView currencyIcon = convertView.findViewById(R.id.currencyIcon);
-    TextView currencyCode = convertView.findViewById(R.id.currnecyCode);
-    TextView currencyID = convertView.findViewById(R.id.currnecyID);
+    ImageView currencyIcon = convertView.findViewById(R.id.currency_icon);
+    TextView currencyCode = convertView.findViewById(R.id.currency_code);
+    TextView currencyID = convertView.findViewById(R.id.currency_id);
     Map<String, String> currency = currencies.get(index);
 
-    // TODO 使用glide库下载币种图片
+    String url = currency.get("icon");
+    if (url != null && !url.equals("")) {
+      Picasso.get().load(url).into(currencyIcon);
+    }
     currencyCode.setText(currency.get("code"));
     currencyID.setText(currency.get("id"));
 

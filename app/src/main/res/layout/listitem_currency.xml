@@ -5,7 +5,7 @@
   android:padding="16dp">
 
   <ImageView
-    android:id="@+id/currencyIcon"
+    android:id="@+id/currency_icon"
     android:layout_width="72dp"
     android:layout_height="72dp"
     android:contentDescription="@string/app_name"
@@ -32,7 +32,7 @@
         android:textStyle="bold" />
 
       <TextView
-        android:id="@+id/currnecyCode"
+        android:id="@+id/currency_code"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
@@ -56,7 +56,7 @@
         android:textStyle="bold" />
 
       <TextView
-        android:id="@+id/currnecyID"
+        android:id="@+id/currency_id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
