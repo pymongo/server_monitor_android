@@ -1,4 +1,4 @@
-package com.monitor.exchange;
+package com.monitor.exchange.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -7,6 +7,8 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.monitor.exchange.R;
 
 import java.util.HashMap;
 import java.util.List;
@@ -18,7 +20,7 @@ public class CurrencyAdapter extends BaseAdapter {
   private List<HashMap<String, String>> currencies;
   private LayoutInflater inflater;
 
-  CurrencyAdapter(Context context, List<HashMap<String, String>> currencies) {
+  public CurrencyAdapter(Context context, List<HashMap<String, String>> currencies) {
     // 构造方法会隐式地调用super。个别需要super的构造方法Overloading时才需要写super
     this.currencies = currencies;
     this.inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
