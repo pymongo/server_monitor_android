@@ -36,10 +36,6 @@ import okhttp3.Response;
 
 public class MineFragment extends Fragment {
 
-  public static String lineNumber() {
-    return String.valueOf(Thread.currentThread().getStackTrace()[2].getLineNumber());
-  }
-
   private final static String TAG = "MineFragment";
   private List<HashMap<String, String>> currencies;
   private CurrencyAdapter adapter;
@@ -47,8 +43,7 @@ public class MineFragment extends Fragment {
   @Nullable
   @Override
   public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-    // return super.onCreateView(inflater, container, savedInstanceState);
-    return inflater.inflate(R.layout.fragment_mine, container, false);
+    return inflater.inflate(R.layout.items_container, container, false);
   }
 
   @Override

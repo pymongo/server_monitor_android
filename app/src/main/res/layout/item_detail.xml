@@ -7,7 +7,7 @@
 
   <!-- 布局参考：法币交易-订单详情页面(show_trading) -->
   <TextView
-    android:id="@+id/item_key"
+    android:id="@+id/detail_key"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:text="@string/empty"
@@ -22,7 +22,7 @@
     android:layout_weight="1" />
 
   <TextView
-    android:id="@+id/item_value"
+    android:id="@+id/detail_value"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:text="@string/empty"
