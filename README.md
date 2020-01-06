@@ -25,7 +25,8 @@ Git版本：[2857ed7d](https://github.com/cadae-exchange/android-server-monitor/
 
 1. 显示服务器内存/硬盘使用情况
 2. 新增了两个webview显示的页面
-3. 币种列表页面增加了币种图标的显示
+3. APP默认全屏显示，适配全面屏
+4. 币种列表页面增加了币种图标的显示
 
 ---
 
