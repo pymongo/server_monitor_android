@@ -9,7 +9,7 @@
     android:id="@+id/navigation_home"
     android:name="com.monitor.exchange.fragment.HomeFragment"
     android:label="@string/title_home"
-    tools:layout="@layout/items_container" />
+    tools:layout="@layout/webview_container" />
   <fragment
     android:id="@+id/navigation_monitor"
     android:name="com.monitor.exchange.fragment.MonitorFragment"
@@ -24,5 +24,5 @@
     android:id="@+id/navigation_mine"
     android:name="com.monitor.exchange.fragment.MineFragment"
     android:label="@string/title_mine"
-    tools:layout="@layout/items_container" />
+    tools:layout="@layout/webview_container" />
 </navigation>

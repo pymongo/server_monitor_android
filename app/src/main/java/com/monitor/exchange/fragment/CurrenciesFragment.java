@@ -35,7 +35,6 @@ import java.util.Objects;
 
 public class CurrenciesFragment extends Fragment {
 
-  private List<HashMap<String, String>> currencies;
   private CurrencyAdapter adapter;
 
   @Nullable
@@ -51,7 +50,7 @@ public class CurrenciesFragment extends Fragment {
     Activity activity = getActivity();
     assert activity != null;
     Context context = activity.getApplicationContext();
-    currencies = new ArrayList<>();
+    List<HashMap<String, String>> currencies = new ArrayList<>();
     adapter = new CurrencyAdapter(context, currencies);
     ListView listView = Objects.requireNonNull(getView()).findViewById(R.id.list_view);
     listView.setAdapter(adapter);
@@ -65,14 +64,16 @@ public class CurrenciesFragment extends Fragment {
         try {
           JSONArray jsonArray = response.getJSONArray("all_currencies");
           Log.i(Constant.LOG_TAG, jsonArray.toString(2));
+          ArrayList<HashMap<String, String>> currenciesList = new ArrayList<>();
           for (int i = 0; i < jsonArray.length(); i++) {
             JSONObject currencyHash = jsonArray.getJSONObject(i);
-            HashMap<String, String> map = new HashMap<>();
-            map.put("id", currencyHash.getString("id"));
-            map.put("code", currencyHash.getString("code"));
-            map.put("icon", currencyHash.getString("icon"));
-            adapter.appendCurrency(map);
+            HashMap<String, String> currencyMap = new HashMap<>();
+            currencyMap.put("id", currencyHash.getString("id"));
+            currencyMap.put("code", currencyHash.getString("code"));
+            currencyMap.put("icon", currencyHash.getString("icon"));
+            currenciesList.add(currencyMap);
           }
+          adapter.updateCurrencies(currenciesList);
         } catch (JSONException e) {
           e.printStackTrace();
         }
