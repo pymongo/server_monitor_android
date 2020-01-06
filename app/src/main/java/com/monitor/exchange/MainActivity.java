@@ -8,21 +8,9 @@ import androidx.navigation.ui.NavigationUI;
 
 import android.os.Bundle;
 
-import android.widget.Toast;
-
-
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-
-
-
 public class MainActivity extends AppCompatActivity {
-
-  final static String TAG = "monitorLog";
-
-  public void sendToast(String Message) {
-    Toast.makeText(this, Message, Toast.LENGTH_SHORT).show();
-  }
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +23,6 @@ public class MainActivity extends AppCompatActivity {
     AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(R.id.navigation_home,
       R.id.navigation_monitor, R.id.navigation_currencies, R.id.navigation_mine).build();
     NavController navController = Navigation.findNavController(this, R.id.navigation_host_fragment);
-    NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
     NavigationUI.setupWithNavController(bottomNavigation, navController);
   }
 
