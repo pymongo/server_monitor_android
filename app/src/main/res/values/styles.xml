@@ -9,7 +9,7 @@
     <!-- 状态栏全透明 -->
 <!--    <item name="android:statusBarColor">@android:color/transparent</item>-->
     <!-- 全面屏：App页面会从状态栏显示，状态栏始终显示在最前端 -->
-    <item name="android:windowTranslucentStatus">true</item>
+<!--    <item name="android:windowTranslucentStatus">true</item>-->
     <!-- 状态栏的文字颜色设为白底黑字 -->
     <item name="android:windowLightStatusBar">true</item>
   </style>
