@@ -27,9 +27,9 @@ public class MineFragment extends Fragment {
   @SuppressLint("SetJavaScriptEnabled")
   @Override
   public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-    WebView myWebView = Objects.requireNonNull(getView()).findViewById(R.id.webview);
-    myWebView.getSettings().setJavaScriptEnabled(true);
     // 字节跳动官网需要js才能加载，墨刀和树莓派官网不需要
-    myWebView.loadUrl("https://modao.cc");
+    WebView myWebView = Objects.requireNonNull(getView()).findViewById(R.id.webview);
+    // myWebView.getSettings().setJavaScriptEnabled(true);
+    myWebView.loadUrl("https://www.raspberrypi.org/");
   }
 }

@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -34,7 +35,7 @@ import okhttp3.Response;
 
 public class MonitorFragment extends Fragment {
 
-  private final static String TAG = "MineFragment";
+  private final static String TAG = "MonitorFragment";
   private ArrayList<ArrayList<String>> data;
   private DetailAdapter adapter;
 
@@ -52,7 +53,9 @@ public class MonitorFragment extends Fragment {
     Context context = activity.getApplicationContext();
     data = new ArrayList<>();
     adapter = new DetailAdapter(context, data);
-    ListView listView = Objects.requireNonNull(getView()).findViewById(R.id.list_view);
+    ListView listView = view.findViewById(R.id.list_view);
+    TextView banner = view.findViewById(R.id.banner);
+    banner.setText(getResources().getString(R.string.title_test_server));
     listView.setAdapter(adapter);
 
     OkHttpClient httpClient = new OkHttpClient.Builder()
@@ -61,7 +64,7 @@ public class MonitorFragment extends Fragment {
       .readTimeout(Constant.IO_TIMEOUT, TimeUnit.SECONDS)
       .build();
     Request request = new Request.Builder()
-      .url(Constant.MONITOR_API)
+      .url(Constant.TEST_SERVER_MONITOR_API)
       .build();
 
     try {
