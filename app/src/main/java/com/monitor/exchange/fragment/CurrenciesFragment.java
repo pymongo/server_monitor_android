@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -52,8 +53,10 @@ public class CurrenciesFragment extends Fragment {
     Context context = activity.getApplicationContext();
     List<HashMap<String, String>> currencies = new ArrayList<>();
     adapter = new CurrencyAdapter(context, currencies);
-    ListView listView = Objects.requireNonNull(getView()).findViewById(R.id.list_view);
+    ListView listView = view.findViewById(R.id.list_view);
     listView.setAdapter(adapter);
+    TextView banner = view.findViewById(R.id.banner);
+    banner.setText(getResources().getString(R.string.title_currencies));
 
     RequestQueue requestQueue = Volley.newRequestQueue(context);
     JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET,
