@@ -1,10 +1,10 @@
 <resources>
   <string name="app_name">服务器监控</string>
   <string name="empty">null</string>
-  <string name="title_home">首页</string>
-  <string name="title_monitor">服务器监控</string>
+  <string name="title_production_server">生产服务器</string>
+  <string name="title_test_server">测试服务器</string>
   <string name="title_currencies">币种列表</string>
-  <string name="title_mine">我的</string>
+  <string name="title_browser">浏览器</string>
   <string name="currency_code">币种名称：</string>
   <string name="currency_id">币种ID：</string>
 </resources>

@@ -3,13 +3,13 @@
 
   <item
     android:id="@+id/navigation_home"
-    android:icon="@drawable/ic_home_black_24dp"
-    android:title="@string/title_home" />
+    android:icon="@drawable/ic_server_24dp"
+    android:title="@string/title_production_server" />
 
   <item
     android:id="@+id/navigation_monitor"
     android:icon="@drawable/ic_airplay_black_24dp"
-    android:title="@string/title_monitor" />
+    android:title="@string/title_test_server" />
 
   <item
     android:id="@+id/navigation_currencies"
@@ -18,7 +18,7 @@
 
   <item
     android:id="@+id/navigation_mine"
-    android:icon="@drawable/ic_person_black_24dp"
-    android:title="@string/title_mine" />
+    android:icon="@drawable/ic_chrome_24dp"
+    android:title="@string/title_browser" />
 
 </menu>
