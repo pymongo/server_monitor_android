@@ -15,6 +15,19 @@
 
 ## 历史版本与下载链接
 
+### 版本号：2020.01.08
+
+[2020.01.08版下载链接](http://showmethemoney.hnengdata.com/image_after_2019_06/1995/server_monitor_2020.01.08.apk)
+Git版本：[69375d59](https://github.com/cadae-exchange/android-server-monitor/commit/69375d59efa0a11c91b3528c2dcc88b7b2b3fba1)
+
+
+功能介绍(changelog)：
+
+1. 对接上生产服务器的状态监控接口
+2. 修改了底部导航栏的文案和图标
+
+---
+
 ### 版本号：2020.01.06
 
 [2020.01.06版下载链接](http://showmethemoney.hnengdata.com/image_after_2019_06/1987/monitor_2020.01.06.apk)
