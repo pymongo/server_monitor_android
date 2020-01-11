@@ -60,10 +60,7 @@ public class CurrenciesFragment extends Fragment {
 
     RequestQueue requestQueue = Volley.newRequestQueue(context);
     JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET,
-      Constant.HOME_API, null, new Response.Listener<JSONObject>() {
-
-      @Override
-      public void onResponse(JSONObject response) {
+      Constant.HOME_API, null, response -> {
         try {
           JSONArray jsonArray = response.getJSONArray("all_currencies");
           Log.i(Constant.LOG_TAG, jsonArray.toString(2));
@@ -80,12 +77,7 @@ public class CurrenciesFragment extends Fragment {
         } catch (JSONException e) {
           e.printStackTrace();
         }
-      }
-    }, new Response.ErrorListener() {
-
-      @Override
-      public void onErrorResponse(VolleyError error) {
-      }
+    }, error -> {
     });
     requestQueue.add(jsonObjectRequest);
   }

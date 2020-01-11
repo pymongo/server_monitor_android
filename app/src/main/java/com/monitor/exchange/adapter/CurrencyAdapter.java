@@ -64,7 +64,7 @@ public class CurrencyAdapter extends BaseAdapter {
     Map<String, String> currency = currencies.get(index);
 
     String url = currency.get("icon");
-    if (url != null && !url.equals("")) {
+    if (url != null && !url.isEmpty()) {
       Picasso.get().load(url).into(currencyIcon);
     }
     currencyCode.setText(currency.get("code"));
