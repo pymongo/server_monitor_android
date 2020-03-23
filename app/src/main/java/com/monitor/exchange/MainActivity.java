@@ -6,7 +6,6 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.NavigationUI;
 
 import android.os.Bundle;
-import android.webkit.WebView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 

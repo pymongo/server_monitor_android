@@ -30,6 +30,8 @@ public class MineFragment extends Fragment {
     // 字节跳动官网需要js才能加载，墨刀和树莓派官网不需要
     WebView myWebView = Objects.requireNonNull(getView()).findViewById(R.id.webview);
     // myWebView.getSettings().setJavaScriptEnabled(true);
-    myWebView.loadUrl("https://www.raspberrypi.org/");
+//    myWebView.loadUrl("https://www.raspberrypi.org/");
+//    myWebView.loadUrl("http://v-api.testcadae.top/api/v2/ping");
+    myWebView.loadUrl("http://localhost:4000/api/v2/ping");
   }
 }
